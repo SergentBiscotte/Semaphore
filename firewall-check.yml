@@ -1,6 +1,6 @@
 ---
 - name: Check for firewall rules
-    shell: firewall-cmd --list-all
+    command: firewall-cmd --list-all
     register: firewall_rules
     when: ansible_distribution == 'CentOS'
 - name: Print firewall rules
