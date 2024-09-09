@@ -2,9 +2,7 @@
   172.31.166.29
   172.20.150.123
 
-[all:vars]
+[linux:vars]
 ansible_connection=ssh
 ansible_user=tmacvicar
-
-[linux:vars]
 ansible_password='Commando_06'
