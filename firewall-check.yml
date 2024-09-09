@@ -1,9 +1,8 @@
----
-- name: Check for firewall rules
+name: Check for firewall rules
     shell: "firewall-cmd --list-all"
     register: firewall_rules
     when: ansible_distribution == 'CentOS'
-- name: Print firewall rules
+name: Print firewall rules
     debug:
       msg: "{{ firewall_rules.stdout }}"
     when: firewall_rules is defined
