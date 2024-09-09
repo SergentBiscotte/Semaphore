@@ -1,8 +1,14 @@
-name: Check for firewall rules
-    shell: 'firewall-cmd --list-all'
-    register: firewall_rules
-    when: ansible_distribution == 'CentOS'
-name: Print firewall rules
-    debug:
-      msg: "{{ firewall_rules.stdout }}"
-    when: firewall_rules is defined
+---
+- name: Check Firewall
+  hosts: all
+  become: true
+  
+  tasks:
+  - name: Check for firewall rules
+      shell: 'firewall-cmd --list-all'
+      register: firewall_rules
+      when: ansible_distribution == 'CentOS'
+  - name: Print firewall rules
+      debug:
+        msg: "{{ firewall_rules.stdout }}"
+      when: firewall_rules is defined
