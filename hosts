@@ -1,5 +1,5 @@
 [linux]
-  172.31.160.1
+  172.31.166.29
 
 [linux:vars]
 ansible_connection=ssh
