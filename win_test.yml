@@ -4,7 +4,7 @@
 
   tasks:
     - name: Execute ipconfig
-      win_command: ipconfig
+      win_shell: ipconfig
       register: ipconfig_output
 
     - name: Display ipconfig output
