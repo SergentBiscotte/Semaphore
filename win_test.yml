@@ -3,9 +3,11 @@
   hosts: windows
 
   tasks:
-    - name: run ipconfig
-    ansible.windows.win_command: ipconfig
-    register: ipconfig
- 
- - debug: var=ipconfig
+    - name: Execute ipconfig
+      win_command: ipconfig
+      register: ipconfig_output
+
+    - name: Display ipconfig output
+      debug:
+        var: ipconfig_output.stdout_lines
 
