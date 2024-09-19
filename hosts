@@ -13,6 +13,6 @@ ansible_password='Commando_06'
   192.168.254.59
 
 [windows:vars]
-ansible_connection=winrm
+ansible_connection=windows
 ansible_winrm_server_cert_validation=ignore
 ansible_user=tmacvicar
