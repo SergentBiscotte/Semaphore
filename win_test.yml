@@ -1,0 +1,7 @@
+---
+- name: Windows Test
+  hosts: windows
+
+  tasks:
+  - name: Windows Test
+    ansible.builtin.ping:
