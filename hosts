@@ -15,4 +15,6 @@ ansible_password='Commando_06'
 [windows:vars]
 ansible_connection=windows
 ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport: basic
 ansible_user=tmacvicar
+ansible_password='Commando_06'
