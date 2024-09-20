@@ -2,7 +2,7 @@
   172.31.166.29
 
 [linux]
-  192.168.254.61
+  192.168.254.62
 
 [linux:vars]
 ansible_connection=ssh
