@@ -4,12 +4,12 @@
 
   tasks:
   - name: Get service status
-  command: systemctl status "{{ item }}"
-  with_items:
-  - ufw
-  - firewalld
-  - sshd
-  register: result
+    command: systemctl status "{{ item }}"
+    with_items:
+    - ufw
+    - firewalld
+    - sshd
+    register: result
 
   - name: Print result
     debug:
