@@ -7,8 +7,6 @@
     command: systemctl status "{{ item }}"
     with_items:
     - ufw
-    - firewalld
-    - sshd
     register: result
     ignore_errors: yes
 
