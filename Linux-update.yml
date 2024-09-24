@@ -1,6 +1,7 @@
 ---
 - name: Update packages
   hosts: linux
+  become: yes
 
   tasks:
   - name: Install updates
