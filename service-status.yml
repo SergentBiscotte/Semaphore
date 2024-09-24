@@ -10,6 +10,7 @@
     - firewalld
     - sshd
     register: result
+    ignore_errors: yes
 
   - name: Print result
     debug:
