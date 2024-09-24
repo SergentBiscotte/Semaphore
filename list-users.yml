@@ -1,0 +1,15 @@
+---
+- name: List all local users on a Rocky Linux VM
+  hosts: linux
+  tasks:
+    - name: Retrieve list of local users
+      command: getent passwd
+      register: users_output
+
+    - name: Extract user list
+      set_fact:
+        local_users: "{{ users_output.stdout_lines | map('split', ':') | map('first') }}"
+
+    - name: Show the list of local users
+      debug:
+        var: local_users
