@@ -3,9 +3,11 @@
   hosts: linux
 
   tasks:
-  - name: Get service status
-    ansible.builtin.service_facts:
-    
-  - name: Show service status
+  - name: Get ufw status using command
+    ansible.builtin.command:
+      cmd: ufw status
+    register: ufw_status
+
+  - name: Show ufw status
     ansible.builtin.debug:
-      msg: "L'état de firewalld est : {{ ansible_facts.services['firewalld.service'].state }}"
+      msg: "L'état de ufw est : {{ ufw_status.stdout }}"
