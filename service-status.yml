@@ -4,12 +4,7 @@
 
   tasks:
   - name: Get service status
-    command: systemctl status "{{ item }}"
-    with_items:
-    - ufw
-    register: result
-    ignore_errors: yes
-
-  - name: Print result
-    debug:
-     var: result
+    ansible.builtin.service_facts:
+  - name: Show service status
+    ansible.builtin.debug:
+    msg: "L'état de usw est : {{ ansible_facts.services['ufw.service'].state }}"
