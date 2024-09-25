@@ -12,4 +12,4 @@
 
   - name: Show service status
     ansible.builtin.debug:
-      msg: "L'état de ufw est : {{ 'active' if service_status.status.ActiveState == 'active' else 'inactive' }}"
+      msg: "L'état du service est : {{ 'active' if service_status.status.ActiveState == 'active' else 'inactive' }}"
