@@ -4,11 +4,12 @@
   become: true
 
   tasks:
-  - name: Get ufw status using command
-    ansible.builtin.command:
-      cmd: ufw status
-    register: ufw_status
+  - name: Check if service is active
+    ansible.builtin.systemd:
+      name: ufw
+      state: started
+    register: service_status
 
-  - name: Show ufw status
+  - name: Show service status
     ansible.builtin.debug:
-      msg: "L'état de ufw est : {{ ufw_status.stdout }}"
+      msg: "L'état de ufw est : {{ 'active' if service_status.status.ActiveState == 'active' else 'inactive' }}"
