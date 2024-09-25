@@ -1,6 +1,7 @@
 ---
 - name: Check service status (on/off)
   hosts: linux
+  become: true
 
   tasks:
   - name: Get ufw status using command
