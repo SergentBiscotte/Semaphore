@@ -8,4 +8,4 @@
     
   - name: Show service status
     ansible.builtin.debug:
-    msg: "L'état de usw est : {{ ansible_facts.services['ufw.service'].state }}"
+      msg: "L'état de usw est : {{ ansible_facts.services['ufw.service'].state }}"
