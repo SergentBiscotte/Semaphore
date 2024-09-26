@@ -6,8 +6,7 @@
 
 [linux:vars]
 ansible_connection=ssh
-ansible_user=tmacvicar
-ansible_password='Commando_06'
+
 
 [windows]
   192.168.254.59
